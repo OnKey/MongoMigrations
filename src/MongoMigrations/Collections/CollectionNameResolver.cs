@@ -16,11 +16,16 @@ namespace MongoMigrations.Collections
                 return name;
             }
 
-            throw new MissingDbCollectionConfiguration(entityType.ToString());
+            throw new MissingDbCollectionConfigurationException(entityType.ToString());
         }
 
         public ICollectionNameResolver AddType(Type type, string collectionName)
         {
+            if (string.IsNullOrEmpty(collectionName))
+            {
+                throw new ArgumentException("cannot be null or empty", nameof(collectionName));
+            }
+            
             this.collectionNames.Add(type, collectionName);
             return this;
         }

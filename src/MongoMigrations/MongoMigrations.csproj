@@ -3,6 +3,14 @@
     <PropertyGroup>
         <TargetFramework>net5.0</TargetFramework>
         <Nullable>enable</Nullable>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <PackageId>Onkey.MongoMigrations</PackageId>
+        <Title>Mongo Migrations</Title>
+        <Authors>OnKey</Authors>
+        <Description>Provides the ability to migrate Mongo DB documents and databases as the schema evolves</Description>
+        <PackageProjectUrl>https://github.com/OnKey/MongoMigrations</PackageProjectUrl>
+        <PackageLicenseUrl></PackageLicenseUrl>
+        <RepositoryUrl>https://github.com/OnKey/MongoMigrations</RepositoryUrl>
     </PropertyGroup>
 
     <ItemGroup>
@@ -10,5 +18,8 @@
         <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="5.0.0" />
         <PackageReference Include="MongoDB.Driver" Version="2.18.0" />
     </ItemGroup>
-    
+
+    <PropertyGroup>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    </PropertyGroup>
 </Project>
