@@ -11,6 +11,7 @@
         <PackageProjectUrl>https://github.com/OnKey/MongoMigrations</PackageProjectUrl>
         <PackageLicenseUrl></PackageLicenseUrl>
         <RepositoryUrl>https://github.com/OnKey/MongoMigrations</RepositoryUrl>
+        <Version>1.0.1</Version>
     </PropertyGroup>
 
     <ItemGroup>
