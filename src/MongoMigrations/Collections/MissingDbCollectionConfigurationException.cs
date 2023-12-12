@@ -2,9 +2,9 @@ using System;
 
 namespace MongoMigrations.Collections
 {
-    public class MissingDbCollectionConfiguration : Exception
+    public class MissingDbCollectionConfigurationException : Exception
     {
-        public MissingDbCollectionConfiguration(string type) :
+        public MissingDbCollectionConfigurationException(string type) :
             base($"{type} does not have a mapping to a collection name configured")
         {
         }
