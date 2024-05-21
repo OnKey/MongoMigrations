@@ -16,7 +16,12 @@ namespace MongoMigrations.MigrationRunner
 
         public override void WriteEndDocument()
         {
-            this.actionBeforeEnd?.Invoke(this.inner);
+            // only run if we're ending the top level doc, not nested documents
+            if (this.SerializationDepth == 1)
+            {
+                this.actionBeforeEnd?.Invoke(this.inner);
+            }
+            
             base.WriteEndDocument();
         }
     }

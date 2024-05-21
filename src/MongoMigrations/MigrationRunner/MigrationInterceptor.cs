@@ -12,8 +12,8 @@ namespace MongoMigrations.MigrationRunner
     /// </summary>
     internal class MigrationInterceptor<TDocument> : BsonClassMapSerializer<TDocument>, IMigrationInterceptor<TDocument>
     {
-        private IVersionLocator versionLocator;
-        private IDocumentMigrationRunner documentMigrationRunner;
+        private readonly IVersionLocator versionLocator;
+        private readonly IDocumentMigrationRunner documentMigrationRunner;
 
         public MigrationInterceptor(IVersionLocator versionLocator, IDocumentMigrationRunner documentMigrationRunner) : base(BsonClassMap.LookupClassMap(typeof(TDocument)))
         {

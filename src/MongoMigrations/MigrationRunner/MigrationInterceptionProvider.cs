@@ -1,6 +1,5 @@
 using System;
 using MongoDB.Bson.Serialization;
-using MongoMigrations.Migrations;
 
 namespace MongoMigrations.MigrationRunner
 {
@@ -10,7 +9,7 @@ namespace MongoMigrations.MigrationRunner
     /// </summary>
     internal class MigrationInterceptionProvider : IBsonSerializationProvider
     {
-        private IVersionLocator versionLocator;
+        private readonly IVersionLocator versionLocator;
         private readonly IServiceProvider serviceProvider;
 
         public MigrationInterceptionProvider(IVersionLocator versionLocator, IServiceProvider serviceProvider)
